@@ -42,7 +42,7 @@
               </md-list-item>
 
               <md-list-item href="#" @click="scrollToElement()">
-                <p>EXPERIENCE</p>
+                <p>PROJECTS</p>
               </md-list-item>
 
               <md-list-item href="#" @click="scrollToElement()">

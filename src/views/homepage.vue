@@ -13,61 +13,87 @@
       </div>
     </parallax>
     <div class="main main-raised">
+      <div id="AboutMeSection" class="section profile-content">
         <div class="container">
           <aboutMe/>
         </div>
-
-      <div class="section section-basic">
+      </div>
+      <div id="CoreSkillsSection" class="section section-basic">
         <div class="container">
-          <div class="title">
+          <div class="title text-center">
             <h2>Core Skills</h2>
           </div>
           <coreSkills></coreSkills>
         </div>
       </div>
 
-      <div class="section section-examples">
+      <div id="ProjectsSection" class="section section-examples">
         <div class="container-fluid text-center">
           <div class="title">
-            <h3>Experience</h3>
+            <h2>Projects</h2>
           </div>
           <div class="md-layout">
             <div class="md-layout-item">
-              <a href="#/landing" target="_blank">
+              <a href="https://deexplorer.web.app/" target="_blank">
                 <img
-                  :src="landing"
+                  :src="russle"
                   alt="Rounded Image"
                   class="img-raised rounded img-fluid"
                 />
               </a>
-              <md-button href="#/landing" class="md-simple md-success md-lg"
-                >View Landing Page</md-button
-              >
+              <md-button href="https://deexplorer.web.app/" target="_blank" class="md-accent">View Project</md-button>
             </div>
             <div class="md-layout-item">
-              <a href="#/profile" target="_blank">
+              <a href="https://pnp-event.web.app/" target="_blank">
                 <img
-                  :src="profile"
+                  :src="pnpEvents"
                   alt="Rounded Image"
                   class="img-raised rounded img-fluid"
+                  style="height:31%;"
                 />
               </a>
-              <md-button href="#/profile" class="md-simple md-success md-lg"
-                >View Profile Page</md-button
-              >
+              <md-button href="https://pnp-event.web.app/" target="_blank" class="md-accent"
+                >View Project</md-button>
             </div>
+            <div class="md-layout-item">
+              <a href="https://heroku-sample-jane.herokuapp.com/" target="_blank">
+                <img
+                  :src="socket"
+                  alt="Rounded Image"
+                  class="img-raised rounded img-fluid"
+                  style="height:31%;"
+                />
+              </a>
+              <md-button href="https://heroku-sample-jane.herokuapp.com/" target="_blank" class="md-accent"
+                >View Project</md-button
+              >
+            </div>  
           </div>
         </div>
       </div>
 
-      <div class="section">
+      <div id="ContactSection" class="section">
         <div class="container text-center">
           <div class="md-layout">
             <div
               class="md-layout-item md-size-66 md-xsmall-size-100 ml-auto mr-auto text-center"
             >
               <h2>Contact Me</h2>
-                <div>
+              <div class="md-layout">
+                <div class="md-layout-item">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>maryjane.paller@student.passerellesnumeriques.org</p>
+                </div>
+                <div class="md-layout-item">
+                    <h3><i class="fas fa-phone-square"></i> Phone Number</h3>
+                    <p>09123456789</p>
+                </div>
+                <div class="md-layout-item">
+                  <h3><i class="fab fa-facebook"></i> Facebook Account</h3>
+                    <p>Mary Jane Cajes Paller</p>
+                </div>
+              </div>
+                <!-- <div>
                     <h3><i class="fas fa-envelope"></i> Email</h3>
                     <p>maryjane.paller@student.passerellesnumeriques.org</p>
                 </div>
@@ -78,7 +104,7 @@
                 <div>
                     <h3><i class="fab fa-facebook"></i> Facebook Account</h3>
                     <p>Mary Jane Cajes Paller</p>
-                </div>
+                </div> -->
                 <!-- <md-button
                     href="javascript:void(0)"
                     class="md-just-icon md-simple md-envelope"
@@ -119,13 +145,17 @@ export default {
       type: String,
       default: require("@/assets/img/city.jpg")
     },
-    landing: {
+    russle: {
       type: String,
-      default: require("@/assets/img/landing.jpg")
+      default: require("@/assets/img/russle-web.png")
     },
-    profile: {
+    pnpEvents: {
       type: String,
-      default: require("@/assets/img/profile.jpg")
+      default: require("@/assets/img/pnp-events.png")
+    },
+    socket: {
+      type: String,
+      default: require("@/assets/img/socket.png")
     }
   },
   data() {
