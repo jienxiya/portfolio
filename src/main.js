@@ -23,6 +23,8 @@ import 'aos/dist/aos.css'
 import { VueTypedJs } from 'vue-typed-js'
 Vue.use(VueTypedJs)
 
+import vuetify from '@/plugins/vuetify' 
+
 Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
@@ -45,6 +47,7 @@ new Vue({
   created: function(){
     AOS.init();
   },
+  vuetify,
   router,
   render: h => h(App)
 }).$mount("#app");
