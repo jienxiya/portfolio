@@ -1,18 +1,26 @@
 <template>
   <div class="wrapper">
     <parallax id="header-page" class="page-header header-filter" :style="headerStyle">
-      <div class="md-layout">
+      <div id="Home" class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
             <div class="brand">
               <!-- <h1>Mary Jane Cajes Paller</h1> -->
-              <vue-typed-js :strings="['awesome', 'brilliant']" :loop="true" @onComplete="doSmth()">
+              <!-- <vue-typed-js 
+                :strings="['awesome', 'brilliant']" 
+                :typeSpeed="0" 
+                :smartBackspace="true"
+                :loop="true" 
+                @onComplete="doSmth()">
                 <h2>
                   We are a
                   <span class="typing">|</span> company!
                 </h2>
-              </vue-typed-js>
-              <!-- <h3>"New idea can be a great innovation"</h3> -->
+              </vue-typed-js>-->
+              <!-- <div class="typed-element" ref="typedElement">
+                <slot></slot>
+              </div> -->
+              <h1><i class="fas fa-quote-left"></i>New idea can be a great Innovation</h1>
             </div>
           </div>
         </div>
@@ -88,19 +96,19 @@
           <h2>Contact Me</h2>
           <div class="space-50"></div>
           <div class="md-layout">
-            <div class="md-layout-item">
+            <div data-aos="zoom-in-down" class="md-layout-item">
               <h3>
                 <i class="fas fa-envelope"></i> Email
               </h3>
               <p>maryjane.paller@student.passerellesnumeriques.org</p>
             </div>
-            <div class="md-layout-item">
+            <div data-aos="zoom-in-down" class="md-layout-item">
               <h3>
                 <i class="fas fa-phone-square"></i> Phone Number
               </h3>
               <p>09123456789</p>
             </div>
-            <div class="md-layout-item">
+            <div data-aos="zoom-in-down" class="md-layout-item">
               <h3>
                 <i class="fab fa-facebook"></i> Facebook Account
               </h3>
@@ -121,13 +129,17 @@
 <script>
 import aboutMe from "./components/aboutMe";
 import coreSkills from "./components/coreSkills";
+import Typed from 'typed.js'
+import { props, getEventHandlers } from '../config/typed-component.config'
 
 export default {
   components: {
     aboutMe,
     coreSkills
   },
-  name: "index",
+  // name: "index",
+  name: 'vue-typed-js',
+  props,
   bodyClass: "index-page",
   props: {
     image: {
@@ -156,7 +168,8 @@ export default {
       firstname: null,
       email: null,
       password: null,
-      leafShow: false
+      leafShow: false,
+      typedObj: null
     };
   },
   computed: {
@@ -170,7 +183,28 @@ export default {
         backgroundImage: `url(${this.signup})`
       };
     }
-  }
+  },
+  // methods: {
+  //   throwError: function (message) {
+  //     throw new TypeError(message)
+  //   },
+  //   initTypedJS: function () {
+  //     const $typed = this.$refs.typedElement.querySelector('.typing')
+  //     if (this.$slots.default.length > 1) {
+  //       this.throwError(`Just one child element allowed inside <${this.$options.name}> component.`)
+  //     } else if (this.$slots.default.length === 1) {
+  //       let typedConfig = this.$props
+  //       typedConfig = getEventHandlers(this, typedConfig)
+  //       this.typedObj = new Typed($typed, typedConfig)
+  //     }
+  //   },
+  // },
+  // mounted () {
+  //   this.initTypedJS()
+  // },
+  // destroyed () {
+  //   this.typedObj.destroy()
+  // },
 };
 </script>
 <style lang="scss">
@@ -188,4 +222,16 @@ export default {
 #header-page {
   height: 700px;
 }
+
+// .typed-element {
+//   display: flex;
+//   align-items: center;
+//   .typed-cursor {
+//     opacity: 1;
+//     animation: typedjsBlink 0.7s infinite;
+//   }
+// }
+// @keyframes typedjsBlink{
+//   50% { opacity: 0.0; }
+// }
 </style>

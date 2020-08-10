@@ -21,18 +21,21 @@
                   <h3 class="title">Mary Jane Cajes Paller</h3>
                   <h6>Software Developer</h6>
                   <md-button
-                    href="javascript:void(0)"
-                    class="md-just-icon md-simple md-github"
+                    href="https://github.com/jienxiya?tab=repositories"
+                    target="_blank"
+                    class="md-just-icon md-github"
                     ><i class="fab fa-github"></i
-                  ></md-button>
+                  ></md-button>&nbsp;&nbsp;&nbsp;&nbsp;
                   <md-button
-                    href="javascript:void(0)"
-                    class="md-just-icon md-simple md-linkedin-in"
+                    href="https://www.linkedin.com/in/mary-paller-72b015196/"
+                    target="_blank"
+                    class="md-just-icon md-linkedin-in"
                     ><i class="fab fa-linkedin-in"></i
-                  ></md-button>
+                  ></md-button>&nbsp;&nbsp;&nbsp;&nbsp;
                   <md-button
-                    href="javascript:void(0)"
-                    class="md-just-icon md-simple md-facebook"
+                    href="https://www.facebook.com/profile.php?id=100007313656252"
+                    target="_blank"
+                    class="md-just-icon md-facebook"
                     ><i class="fab fa-facebook"></i
                   ></md-button>
                 </div>

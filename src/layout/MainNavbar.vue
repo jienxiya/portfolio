@@ -29,23 +29,23 @@
             </mobile-menu>
             <md-list>
 
-              <md-list-item href="#" @click="scrollToElement()">
+              <md-list-item  @click="scrollToHome()">
                 <p>HOME</p>
               </md-list-item>
 
-              <md-list-item href="#" @click="scrollToElement()">
+              <md-list-item  @click="scrollToAboutMe()">
                 <p>ABOUT ME</p>
               </md-list-item>
 
-              <md-list-item href="#" @click="scrollToElement()">
+              <md-list-item  @click="scrollToCoreSkills()">
                 <p>CORE SKILLS</p>
               </md-list-item>
 
-              <md-list-item href="#" @click="scrollToElement()">
+              <md-list-item  @click="scrollToProjects()">
                 <p>PROJECTS</p>
               </md-list-item>
 
-              <md-list-item href="#" @click="scrollToElement()">
+              <md-list-item  @click="scrollToContact()">
                 <p>CONTACT</p>
               </md-list-item>
 
@@ -148,8 +148,33 @@ export default {
     scrollListener() {
       resizeThrottler(this.handleScroll);
     },
-    scrollToElement() {
-      let element_id = document.getElementById("downloadSection");
+    scrollToContact() {
+      let element_id = document.getElementById("ContactSection");
+      if (element_id) {
+        element_id.scrollIntoView({ block: "end", behavior: "smooth" });
+      }
+    },
+    scrollToProjects() {
+      let element_id = document.getElementById("ProjectsSection");
+      if (element_id) {
+        element_id.scrollIntoView({ block: "start", behavior: "smooth" });
+      }
+    },
+    scrollToCoreSkills() {
+      let element_id = document.getElementById("CoreSkillsSection");
+      if (element_id) {
+        element_id.scrollIntoView({ block: "start", behavior: "smooth" });
+      }
+    },
+    scrollToAboutMe() {
+      let element_id = document.getElementById("AboutMeSection");
+      if (element_id) {
+        element_id.scrollIntoView({ block: "end", behavior: "smooth" });
+      }
+    },
+    scrollToHome() {
+      // document.getElement.scrollTop;
+      let element_id = document.getElementById("Home");
       if (element_id) {
         element_id.scrollIntoView({ block: "end", behavior: "smooth" });
       }
