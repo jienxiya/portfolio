@@ -46,48 +46,7 @@
           <div class="title">
             <h2>Projects</h2>
           </div>
-          <div class="md-layout">
-            <div data-aos="flip-left" class="md-layout-item">
-              <a href="https://deexplorer.web.app/" target="_blank">
-                <img :src="russle" alt="Rounded Image" class="img-raised rounded img-fluid" />
-              </a>
-              <md-button
-                href="https://deexplorer.web.app/"
-                target="_blank"
-                class="md-accent"
-              >View Project</md-button>
-            </div>
-            <div data-aos="flip-right" class="md-layout-item">
-              <a href="https://pnp-event.web.app/" target="_blank">
-                <img
-                  :src="pnpEvents"
-                  alt="Rounded Image"
-                  class="img-raised rounded img-fluid"
-                  style="height:31%;"
-                />
-              </a>
-              <md-button
-                href="https://pnp-event.web.app/"
-                target="_blank"
-                class="md-accent"
-              >View Project</md-button>
-            </div>
-            <div data-aos="flip-up" class="md-layout-item">
-              <a href="https://heroku-sample-jane.herokuapp.com/" target="_blank">
-                <img
-                  :src="socket"
-                  alt="Rounded Image"
-                  class="img-raised rounded img-fluid"
-                  style="height:31%;"
-                />
-              </a>
-              <md-button
-                href="https://heroku-sample-jane.herokuapp.com/"
-                target="_blank"
-                class="md-accent"
-              >View Project</md-button>
-            </div>
-          </div>
+          <projects/>
         </div>
       </div>
 
@@ -129,17 +88,19 @@
 <script>
 import aboutMe from "./components/aboutMe";
 import coreSkills from "./components/coreSkills";
-import Typed from 'typed.js'
-import { props, getEventHandlers } from '../config/typed-component.config'
+import projects from "./components/projects";
+// import Typed from 'typed.js'
+// import { props, getEventHandlers } from '../config/typed-component.config'
 
 export default {
   components: {
     aboutMe,
-    coreSkills
+    coreSkills,
+    projects
   },
-  // name: "index",
-  name: 'vue-typed-js',
-  props,
+  name: "index",
+  // name: 'vue-typed-js',
+  // props,
   bodyClass: "index-page",
   props: {
     image: {
@@ -149,27 +110,11 @@ export default {
     signup: {
       type: String,
       default: require("@/assets/img/city.jpg")
-    },
-    russle: {
-      type: String,
-      default: require("@/assets/img/russle-web.png")
-    },
-    pnpEvents: {
-      type: String,
-      default: require("@/assets/img/pnp-events.png")
-    },
-    socket: {
-      type: String,
-      default: require("@/assets/img/socket.png")
     }
   },
   data() {
     return {
-      firstname: null,
-      email: null,
-      password: null,
-      leafShow: false,
-      typedObj: null
+      // typedObj: null
     };
   },
   computed: {
@@ -208,11 +153,6 @@ export default {
 };
 </script>
 <style lang="scss">
-.section-download {
-  .md-button + .md-button {
-    margin-left: 5px;
-  }
-}
 
 @media all and (min-width: 991px) {
   .btn-container {
