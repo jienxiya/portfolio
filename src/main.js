@@ -17,10 +17,17 @@ import App from "./App.vue";
 import router from "./router";
 
 import MaterialKit from "./plugins/material-kit";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
+import { VueTypedJs } from 'vue-typed-js'
+Vue.use(VueTypedJs)
 
 Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
+
+AOS.init();
 
 const NavbarStore = {
   showNavbar: false
@@ -35,6 +42,9 @@ Vue.mixin({
 });
 
 new Vue({
+  created: function(){
+    AOS.init();
+  },
   router,
   render: h => h(App)
 }).$mount("#app");

@@ -9,32 +9,41 @@
           <div class="title">
             <h3>Skills</h3>
           </div>
-          <div>
-              <img src="@/assets/img/skills/html.png" style="height:50px; width:auto;">
+          <div data-aos="fade-up" data-aos-duration="1000">
+              <img  src="@/assets/img/skills/html.png" style="height:50px; width:auto;">
+              <md-tooltip md-direction="right">HTML</md-tooltip>
           </div>
-          <div>
+          <div data-aos="zoom-in-right" >
               <img src="@/assets/img/skills/css.png" style="height:40px; width:auto;">
+              <md-tooltip md-direction="right">CSS</md-tooltip>
           </div>
-          <div>
+          <div data-aos="zoom-out-left">
               <img src="@/assets/img/skills/sass.png" style="height:40px; width:auto;">
+              <md-tooltip md-direction="right">SASS</md-tooltip>
           </div>
-          <div>
+          <div data-aos="zoom-in-right">
               <img src="@/assets/img/skills/vue.png" style="height:50px; width:auto;">
+              <md-tooltip md-direction="right">Vuejs</md-tooltip>
           </div>
-          <div>
+          <div data-aos="zoom-out-left">
               <img src="@/assets/img/skills/angular.png" style="height:50px; width:auto;">
+              <md-tooltip md-direction="right">Angular</md-tooltip>
           </div>
-          <div>
+          <div data-aos="zoom-in-right">
               <img src="@/assets/img/skills/python.png" style="height:40px; width:auto;">
+              <md-tooltip md-direction="right">Python</md-tooltip>
           </div>
-          <div>
+          <div data-aos="zoom-out-left">
               <img src="@/assets/img/skills/java.png" style="height:60px; width:auto;">
+              <md-tooltip md-direction="right">Java</md-tooltip>
           </div>
-          <div>
+          <div data-aos="zoom-in-right">
               <img src="@/assets/img/skills/php.png" style="height:40px; width:auto;">
+              <md-tooltip md-direction="right">PHP</md-tooltip>
           </div>
-          <div>
+          <div data-aos="zoom-out-left">
               <img src="@/assets/img/skills/laravel.png" style="height:50px; width:auto;">
+              <md-tooltip md-direction="right">laravel</md-tooltip>
           </div>
         </div>
 
@@ -44,74 +53,92 @@
           </div>
           <br/>
           <!-- html -->
-          <md-progress-bar
-            class="md-warning"
-            md-mode="buffer"
-            :md-value="amount8"
-          ></md-progress-bar>
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <md-progress-bar
+              class="md-warning"
+              md-mode="buffer"
+              :md-value="amount8"
+            ></md-progress-bar>
+          </div>
           <br/>
           <!-- css -->
-          <md-progress-bar
-            class="md-info"
-            md-mode="buffer"
-            :md-value="amount7"
-          ></md-progress-bar>
+          <div data-aos="zoom-in-right">
+            <md-progress-bar
+              class="md-info"
+              md-mode="buffer"
+              :md-value="amount7"
+            ></md-progress-bar>
+          </div>
           <br/>
           <!-- sass -->
-          <md-progress-bar
-            class="md-primary"
-            md-mode="buffer"
-            :md-value="amount4"
-            :md-buffer="buffer"
-          ></md-progress-bar>
+          <div data-aos="zoom-out-left">
+            <md-progress-bar
+              class="md-primary"
+              md-mode="buffer"
+              :md-value="amount4"
+              :md-buffer="buffer"
+            ></md-progress-bar>
+          </div>
           <br/>
           <!-- vue  -->
-          <md-progress-bar
-            class="md-success"
-            md-mode="buffer"
-            :md-value="amount7"
-            :md-buffer="buffer"
-          ></md-progress-bar>
+          <div data-aos="zoom-in-right">
+            <md-progress-bar
+              class="md-success"
+              md-mode="buffer"
+              :md-value="amount7"
+              :md-buffer="buffer"
+            ></md-progress-bar>
+          </div>
           <br/>
           <!-- angular -->
-          <md-progress-bar
-            class="md-danger"
-            md-mode="buffer"
-            :md-value="amount5"
-            :md-buffer="buffer"
-          ></md-progress-bar>
+          <div data-aos="zoom-out-left">
+            <md-progress-bar
+              class="md-danger"
+              md-mode="buffer"
+              :md-value="amount5"
+              :md-buffer="buffer"
+            ></md-progress-bar>
+          </div>
           <br/>
           <!-- pyhton -->
-          <md-progress-bar
-            class="md-primary"
-            md-mode="buffer"
-            :md-value="amount6"
-            :md-buffer="buffer"
-          ></md-progress-bar>
+          <div data-aos="zoom-in-right">
+            <md-progress-bar
+              class="md-primary"
+              md-mode="buffer"
+              :md-value="amount6"
+              :md-buffer="buffer"
+            ></md-progress-bar>
+          </div>
           <br/>
           <!-- java -->
-          <md-progress-bar
-            class="md-warning"
-            md-mode="buffer"
-            :md-value="amount7"
-            :md-buffer="buffer"
-          ></md-progress-bar>
+          <div data-aos="zoom-out-left">
+            <md-progress-bar
+              class="md-warning"
+              md-mode="buffer"
+              :md-value="amount7"
+              :md-buffer="buffer"
+            ></md-progress-bar>
+          </div>
           <br/>
           <!-- php -->
-          <md-progress-bar
-            class="md-info"
-            md-mode="buffer"
-            :md-value="amount5"
-            :md-buffer="buffer"
-          ></md-progress-bar>
+          <div data-aos="zoom-in-right">
+            <md-progress-bar
+              class="md-info"
+              md-mode="buffer"
+              :md-value="amount5"
+              :md-buffer="buffer"
+            ></md-progress-bar>
+          </div>
           <br/>
           <!-- laravel -->
-          <md-progress-bar
-            class="md-danger"
-            md-mode="buffer"
-            :md-value="amount6"
-            :md-buffer="buffer"
-          ></md-progress-bar>
+          <div data-aos="zoom-out-left">
+            <md-progress-bar
+              class="md-danger"
+              md-mode="buffer"
+              :md-value="amount6"
+              :md-buffer="buffer"
+            ></md-progress-bar>
+          </div>
         </div>
       </div>
     </div>
