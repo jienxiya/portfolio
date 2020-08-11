@@ -2,17 +2,14 @@
   <div class="wrapper">
     <div id="progress-pagination">
       <div class="md-layout text-center">
-        <!-- major skills -->
-        <div class="md-layout-item md-size-20" v-for="item in major" v-bind:key="item.images" v-on:mouseover="mouseOver">
-          <div  data-aos="fade-up" data-aos-duration="1000">
+        <!-- minor skills -->
+        <div class="md-layout-item md-size-20" v-for="item in minor" v-bind:key="item.images" v-on:mouseover="mouseOver">
+            <div  data-aos="fade-up" data-aos-duration="1000">
             <img
               :src="require(`@/assets/img/skills/${item.images}`)"
               class="img-raised rounded img-fluid"
               style="height:100px; width:auto; padding:5px;"
             />
-            <!-- <div class="overlay">
-              <div class="text">{{ item.title}}</div>
-            </div> -->
             <md-tooltip md-direction="top">{{item.title}}</md-tooltip>
           </div>
           <br />
@@ -24,22 +21,18 @@
 
 <script>
 export default {
-  name: "core-skills",
+  name: "minor-skills",
   data() {
     return {
-      major: [
-        { title: "HTML", images: "html.png" },
-        { title: "CSS", images: "css.png" },
-        { title: "SASS", images: "sass.png" },
-        { title: "Vuejs", images: "vue.png" },
-        { title: "Angular", images: "angular.png" },
-        { title: "Python", images: "python.png" },
-        { title: "Java", images: "java.png" },
-        { title: "PHP", images: "php.png" },
-        { title: "ASP.net|MVC", images: "asp.png" },
-        { title: "Laravel", images: "laravel.png" },
-        { title: "Mysql", images: "mysql.png" },
-        { title: "Microsoft SQL Server", images: "sqlserver.png" }
+      minor: [
+        { title: 'Nodejs', images: "nodejs.png" },
+        { title: 'Expressjs', images: "express.png" },
+        { title: 'Mongo DB', images: "mongo.png" },
+        { title: 'Raspberry Pi 3', images: "raspberrypi.png" },
+        { title: 'Socket.io', images: "socketio.png" },
+        { title: 'Nodejs', images: "mqtt.png" },
+        { title: 'Firebase', images: "firebase.png" },
+        { title: 'Heroku', images: "heroku.png" }
       ]
     };
   },
@@ -53,6 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @keyframes icon-move {
   0% {
     opacity: 1;
@@ -76,5 +70,11 @@ export default {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+.md-checkbox,
+.md-radio {
+  display: flex;
+  margin: 0;
+  margin-bottom: 0.5rem;
 }
 </style>

@@ -21,7 +21,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 
 import { VueTypedJs } from 'vue-typed-js'
+
 Vue.use(VueTypedJs)
+
+// import Typed from '@/plugins/typed' 
+// import Typed from 'typed.js'
+// global.Typed = Typed;
 
 import vuetify from '@/plugins/vuetify' 
 
@@ -29,6 +34,7 @@ Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
 
+// Typed.init()
 AOS.init();
 
 const NavbarStore = {
@@ -46,6 +52,7 @@ Vue.mixin({
 new Vue({
   created: function(){
     AOS.init();
+    // Typed.init()
   },
   vuetify,
   router,

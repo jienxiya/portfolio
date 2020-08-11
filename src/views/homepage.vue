@@ -6,21 +6,28 @@
           <div class="image-wrapper">
             <div class="brand">
               <!-- <h1>Mary Jane Cajes Paller</h1> -->
-              <!-- <vue-typed-js 
-                :strings="['awesome', 'brilliant']" 
-                :typeSpeed="0" 
-                :smartBackspace="true"
-                :loop="true" 
-                @onComplete="doSmth()">
-                <h2>
-                  We are a
-                  <span class="typing">|</span> company!
-                </h2>
-              </vue-typed-js>-->
-              <!-- <div class="typed-element" ref="typedElement">
-                <slot></slot>
-              </div> -->
-              <h1><i class="fas fa-quote-left"></i>New idea can be a great Innovation</h1>
+
+              <!-- <h2 style="font-size:4em; font-weight:bold;">
+              <sup><i class="fas fa-quote-left"></i></sup>Coding is
+              <span class="typed-text">{{typeValue}}</span>
+              <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
+              </h2>-->
+              <h2 style="font-size:4em; font-weight:bold;"><sup><i class="fas fa-quote-left"></i></sup>New idea can be a great Innovation</h2>
+
+              <div>
+                <!-- infinite loop -->
+                <vue-typed-js
+                  :strings="['awesome', 'brilliant']"
+                  :loop="true"
+                  :typeSpeed="100"
+                  :smartBackspace="true"
+                >
+                  <h2>
+                    We are a
+                    <span class="typing"></span> company!
+                  </h2>
+                </vue-typed-js>
+              </div>
             </div>
           </div>
         </div>
@@ -37,7 +44,15 @@
           <div class="title text-center">
             <h2>Core Skills</h2>
           </div>
-          <coreSkills></coreSkills>
+          <div>
+            <coreSkills></coreSkills>
+          </div>
+          <div class="title text-center">
+            <h2>Minor Skills</h2>
+          </div>
+          <div>
+            <minorSkills></minorSkills>
+          </div>
         </div>
       </div>
 
@@ -46,7 +61,7 @@
           <div class="title">
             <h2>Projects</h2>
           </div>
-          <projects/>
+          <projects />
         </div>
       </div>
 
@@ -88,19 +103,21 @@
 <script>
 import aboutMe from "./components/aboutMe";
 import coreSkills from "./components/coreSkills";
+import minorSkills from "./components/minorSkills";
 import projects from "./components/projects";
-// import Typed from 'typed.js'
-// import { props, getEventHandlers } from '../config/typed-component.config'
+import  VueTypedJs  from "./components/VueTypedJs";
+// import Typed from "typed.js";
+// import { props, getEventHandlers } from "../config/typed-component.config";
 
 export default {
   components: {
     aboutMe,
     coreSkills,
-    projects
+    minorSkills,
+    projects,
+    VueTypedJs
   },
   name: "index",
-  // name: 'vue-typed-js',
-  // props,
   bodyClass: "index-page",
   props: {
     image: {
@@ -114,7 +131,6 @@ export default {
   },
   data() {
     return {
-      // typedObj: null
     };
   },
   computed: {
@@ -129,31 +145,10 @@ export default {
       };
     }
   },
-  // methods: {
-  //   throwError: function (message) {
-  //     throw new TypeError(message)
-  //   },
-  //   initTypedJS: function () {
-  //     const $typed = this.$refs.typedElement.querySelector('.typing')
-  //     if (this.$slots.default.length > 1) {
-  //       this.throwError(`Just one child element allowed inside <${this.$options.name}> component.`)
-  //     } else if (this.$slots.default.length === 1) {
-  //       let typedConfig = this.$props
-  //       typedConfig = getEventHandlers(this, typedConfig)
-  //       this.typedObj = new Typed($typed, typedConfig)
-  //     }
-  //   },
-  // },
-  // mounted () {
-  //   this.initTypedJS()
-  // },
-  // destroyed () {
-  //   this.typedObj.destroy()
-  // },
+
 };
 </script>
 <style lang="scss">
-
 @media all and (min-width: 991px) {
   .btn-container {
     display: flex;
@@ -162,16 +157,4 @@ export default {
 #header-page {
   height: 700px;
 }
-
-// .typed-element {
-//   display: flex;
-//   align-items: center;
-//   .typed-cursor {
-//     opacity: 1;
-//     animation: typedjsBlink 0.7s infinite;
-//   }
-// }
-// @keyframes typedjsBlink{
-//   50% { opacity: 0.0; }
-// }
 </style>

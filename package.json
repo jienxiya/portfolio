@@ -13,8 +13,11 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "bootstrap-vue": "^2.16.0",
     "core-js": "3.5.0",
+    "mdbvue": "^6.7.1",
     "nouislider": "14.1.0",
+    "typed.js": "^2.0.11",
     "v-tooltip": "2.0.2",
     "vue": "2.6.10",
     "vue-carousel": "0.18.0",
