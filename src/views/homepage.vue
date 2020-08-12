@@ -5,26 +5,24 @@
         <div class="md-layout-item">
           <div class="image-wrapper">
             <div class="brand">
-              <!-- <h1>Mary Jane Cajes Paller</h1> -->
-
-              <!-- <h2 style="font-size:4em; font-weight:bold;">
-              <sup><i class="fas fa-quote-left"></i></sup>Coding is
-              <span class="typed-text">{{typeValue}}</span>
-              <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
-              </h2>-->
-              <h2 style="font-size:4em; font-weight:bold;"><sup><i class="fas fa-quote-left"></i></sup>New idea can be a great Innovation</h2>
+              <h2 style="font-size:4em; font-weight:bold; color:yellow;">
+                <sup><i class="fas fa-quote-left"></i></sup>
+                DEVELOPERS can make a difference in the WORLD
+                <sup><i class="fas fa-quote-right"></i></sup>
+              </h2>
 
               <div>
                 <!-- infinite loop -->
                 <vue-typed-js
-                  :strings="['awesome', 'brilliant']"
+                  :strings="['LIVE  LOVE  CODE']"
                   :loop="true"
                   :typeSpeed="100"
-                  :smartBackspace="true"
+                  :smartBackspace="true" 
+                  :backDelay="1000"
+                  id="typed"
                 >
-                  <h2>
-                    We are a
-                    <span class="typing"></span> company!
+                  <h2 >
+                    <span class="typing"></span>
                   </h2>
                 </vue-typed-js>
               </div>
@@ -106,8 +104,6 @@ import coreSkills from "./components/coreSkills";
 import minorSkills from "./components/minorSkills";
 import projects from "./components/projects";
 import  VueTypedJs  from "./components/VueTypedJs";
-// import Typed from "typed.js";
-// import { props, getEventHandlers } from "../config/typed-component.config";
 
 export default {
   components: {
@@ -157,4 +153,13 @@ export default {
 #header-page {
   height: 700px;
 }
+ #typed{
+   
+   text-align: center !important;
+   justify-content: center;
+   display: center;
+   h2{
+     font-weight: bold !important;
+   }
+ }
 </style>

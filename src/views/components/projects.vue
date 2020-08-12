@@ -60,7 +60,7 @@ export default {
         title: "ChatTalk",
         image: "socket.png",
         description:
-          "ChatTalk is a chat application that uses Socket.io to make a real time chat application. ",
+          "ChatTalk is a chat application that uses Socket.io to make a real time chat application. This project is hosted by Heroku.",
         link: "https://heroku-sample-jane.herokuapp.com/"
       }
     ]
