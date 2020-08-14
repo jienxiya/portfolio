@@ -103,12 +103,12 @@ export default {
       toggledClass: false
     };
   },
-  computed: {
-    showDownload() {
-      const excludedRoutes = ["login", "landing", "profile"];
-      return excludedRoutes.every(r => r !== this.$route.name);
-    }
-  },
+  // computed: {
+  //   showDownload() {
+  //     const excludedRoutes = ["login", "landing", "profile"];
+  //     return excludedRoutes.every(r => r !== this.$route.name);
+  //   }
+  // },
   methods: {
     bodyClick() {
       let bodyClick = document.getElementById("bodyClick");
@@ -144,6 +144,7 @@ export default {
           navbarColor.classList.add("md-transparent");
         }
       }
+      // console.log("current scroll value: ", this.currentScrollValue);
     },
     scrollListener() {
       resizeThrottler(this.handleScroll);

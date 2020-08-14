@@ -1,28 +1,36 @@
 <template>
   <div class="wrapper">
-    <parallax id="header-page" class="page-header header-filter" :style="headerStyle">
+    <parallax id="header-page" class="page-header header-filter">
+      <!-- :style="headerStyle" -->
       <div id="Home" class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
             <div class="brand">
-              <h2 style="font-size:4em; font-weight:bold; color:yellow;">
+              <!-- <h2 style="font-size:4em; font-weight:bold; color:yellow;">
                 <sup><i class="fas fa-quote-left"></i></sup>
                 DEVELOPERS can make a difference in the WORLD
                 <sup><i class="fas fa-quote-right"></i></sup>
-              </h2>
+              </h2>-->
 
               <div>
                 <!-- infinite loop -->
                 <vue-typed-js
-                  :strings="['LIVE  LOVE  CODE']"
+                  :strings="['Mary Jane Cajes Paller', 'a Web Developer']"
                   :loop="true"
                   :typeSpeed="100"
-                  :smartBackspace="true" 
-                  :backDelay="1000"
+                  :smartBackspace="true"
+                  :backDelay="2000"
                   id="typed"
                 >
-                  <h2 >
+                  <h2>
+                    <sup>
+                      <i class="fas fa-quote-left"></i>
+                    </sup>
+                    I am
                     <span class="typing"></span>
+                    <sup>
+                      <i class="fas fa-quote-right"></i>
+                    </sup>
                   </h2>
                 </vue-typed-js>
               </div>
@@ -65,33 +73,15 @@
 
       <div id="ContactSection" class="section">
         <div class="container text-center">
-          <h2>Contact Me</h2>
-          <div class="space-50"></div>
-          <div class="md-layout">
-            <div data-aos="zoom-in-down" class="md-layout-item">
-              <h3>
-                <i class="fas fa-envelope"></i> Email
-              </h3>
-              <p>maryjane.paller@student.passerellesnumeriques.org</p>
-            </div>
-            <div data-aos="zoom-in-down" class="md-layout-item">
-              <h3>
-                <i class="fas fa-phone-square"></i> Phone Number
-              </h3>
-              <p>09123456789</p>
-            </div>
-            <div data-aos="zoom-in-down" class="md-layout-item">
-              <h3>
-                <i class="fab fa-facebook"></i> Facebook Account
-              </h3>
-              <p>Mary Jane Cajes Paller</p>
-            </div>
+          <div class="title">
+            <h2>Contact Me</h2>
           </div>
+          <contacts />
         </div>
       </div>
-      <div class="section section-signup page-header" :style="signupImage">
+      <div class="section section-signup page-header" id="gradientSection">
         <div class="container">
-          <div class="md-layout"></div>
+          <resume />
         </div>
       </div>
     </div>
@@ -103,7 +93,9 @@ import aboutMe from "./components/aboutMe";
 import coreSkills from "./components/coreSkills";
 import minorSkills from "./components/minorSkills";
 import projects from "./components/projects";
-import  VueTypedJs  from "./components/VueTypedJs";
+import VueTypedJs from "./components/VueTypedJs";
+import contacts from "./components/contactSection";
+import resume from "./components/resumeSection";
 
 export default {
   components: {
@@ -111,22 +103,31 @@ export default {
     coreSkills,
     minorSkills,
     projects,
-    VueTypedJs
+    VueTypedJs,
+    contacts,
+    resume
   },
   name: "index",
   bodyClass: "index-page",
-  props: {
-    image: {
-      type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
-    },
-    signup: {
-      type: String,
-      default: require("@/assets/img/city.jpg")
-    }
-  },
   data() {
     return {
+      // pdfLink: require("@/assets/resume.pdf"),
+      publicPath: process.env.BASE_URL,
+
+      valid: true,
+      name: "",
+      nameRules: [
+        v => !!v || "Name is required",
+        v => (v && v.length <= 10) || "Name must be less than 10 characters"
+      ],
+      email: "",
+      emailRules: [
+        v => !!v || "E-mail is required",
+        v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+      ],
+      select: null,
+      items: ["Item 1", "Item 2", "Item 3", "Item 4"],
+      checkbox: false
     };
   },
   computed: {
@@ -141,7 +142,17 @@ export default {
       };
     }
   },
-
+  methods: {
+    validate() {
+      this.$refs.form.validate();
+    },
+    reset() {
+      this.$refs.form.reset();
+    },
+    resetValidation() {
+      this.$refs.form.resetValidation();
+    }
+  }
 };
 </script>
 <style lang="scss">
@@ -152,14 +163,27 @@ export default {
 }
 #header-page {
   height: 700px;
+  background-image: linear-gradient(#80dfff, white);
 }
- #typed{
-   
-   text-align: center !important;
-   justify-content: center;
-   display: center;
-   h2{
-     font-weight: bold !important;
-   }
- }
+#typed {
+  text-align: center !important;
+  justify-content: center;
+  display: center;
+  h2 {
+    font-weight: bold !important;
+    font-size: 4em;
+    //  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+
+    span {
+      color: black;
+      // font-family: "Roboto Slab", "Times New Roman", serif;
+    }
+  }
+}
+
+#gradientSection {
+  background-image: linear-gradient(white, #80dfff);
+  height: 500px;
+}
 </style>

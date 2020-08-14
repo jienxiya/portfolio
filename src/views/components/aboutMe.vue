@@ -18,8 +18,8 @@
                   />
                 </div>
                 <div class="name">
-                  <h3 class="title">Mary Jane Cajes Paller</h3>
-                  <h6>Software Developer</h6>
+                  <!-- <h3 class="title">Mary Jane Cajes Paller</h3>
+                  <h6>Software Developer</h6> -->
                   <md-button
                     href="https://github.com/jienxiya?tab=repositories"
                     target="_blank"
