@@ -82,6 +82,7 @@ export default {
   name: "resumeSection",
   data() {
     return {
+    publicPath: process.env.BASE_URL,
       valid: true,
       name: "",
       nameRules: [
